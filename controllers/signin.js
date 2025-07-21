@@ -1,4 +1,6 @@
 const handleSignin = (db, bcrypt, saltRounds) => (req, res) => {
+  console.log('SignIn request body:', req.body); // Debugging line
+  
   const { email, password } = req.body;
   if (!email || !password) {
     return res.status(400).json('incorrect form submission');
